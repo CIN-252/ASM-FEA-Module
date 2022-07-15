@@ -5,5 +5,3 @@ Practise Javascript
 This is file README!!! You can save somethings here!!!
 
 ...
-
-This text use to check Source Tree
