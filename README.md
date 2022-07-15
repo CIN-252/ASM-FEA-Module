@@ -2,6 +2,4 @@
 
 Practise Javascript
 
-Xin chào!
-My name is Cin Lee
-Change this file at dev
+<!-- This is file README!!! You can save somethings here!!! -->
