@@ -1,0 +1,36 @@
+Lam ham tinh toan tien phong khach san
+const giaQuaDem = 200 (12h - 12h)
+Gio phat sinh: 1h -> + 30k, toi da 200k
+
+const gioVao = new Date('2022-07-15 10:00:00');
+const gioRa = new Date('2022-07-16 10:00:00');
+
+Output:
+function tinhTienPhong(gioVao, gioRa) {
+  return total
+}
+
+test case 1:
+const gioVao = new Date('2022-07-15 13:00:00');
+const gioRa = new Date('2022-07-16 11:00:00');
+total: 200k
+
+test case 2:
+const gioVao = new Date('2022-07-15 13:00:00');
+const gioRa = new Date('2022-07-16 13:00:00');
+total: 230k
+
+test case 3:
+const gioVao = new Date('2022-07-15 13:00:00');
+const gioRa = new Date('2022-07-16 15:00:00');
+total: 290k
+
+test case 4:
+const gioVao = new Date('2022-07-15 13:00:00');
+const gioRa = new Date('2022-07-16 20:00:00');
+total: 400k
+
+test case 5:
+const gioVao = new Date('2022-07-15 10:00:00');
+const gioRa = new Date('2022-07-16 11:00:00');
+total: 230k
