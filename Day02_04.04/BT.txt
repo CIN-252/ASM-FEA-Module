@@ -1,4 +1,5 @@
 Lam ham tinh toan tien phong khach san
+
 const giaQuaDem = 200 (12h - 12h)
 Gio phat sinh: 1h -> + 30k, toi da 200k
 
