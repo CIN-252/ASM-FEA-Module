@@ -2,13 +2,15 @@
 const numbers = [1, 2, 3, 4];
 
 function doubleEvenNumber(number) {
-  return number.map((number) => {
-    if (number % 2 == 0) return (number *= 2);
-    else return number;
-  });
+  if (number % 2 == 0) return (number *= 2);
+  return number;
 }
 
-console.log("Result: ", doubleEvenNumber(numbers));
+function doubleEvenNumberInArr(number) {
+  return number.map((number) => doubleEvenNumber(number));
+}
+
+console.log("Result: ", doubleEvenNumberInArr(numbers));
 
 // Thực hiện với hàm Filter:
 const animals = [
@@ -30,18 +32,18 @@ const animals = [
 ];
 
 // output: (mảng các con vật có weight > 50 kg):
+function isWeightOver50Kg(animal) {
+  if (animal.weight > 50) return true;
+  return false;
+}
 function filterAnimalsOver50Kg(animal) {
-  return animal.filter((animal) => {
-    if (animal.weight > 50) return animal;
-  });
+  return animal.filter((animal) => isWeightOver50Kg(animal));
 }
 console.log("Animal over 50kg: ", filterAnimalsOver50Kg(animals));
 
 // output: (mảng các con vật có chữ t trong name):
 function filterAnimalsContainTInName(animal) {
-  return animal.filter((animal) => {
-    if (animal.name.includes("t")) return animal;
-  });
+  return animal.filter((animal) => animal.name.includes("t"));
 }
 console.log(
   'Animal contain "t" in name: ',
@@ -66,7 +68,7 @@ console.log(result);
 const numbersInput = [1, 2, 3, 4];
 
 function sumArrWithDoubleEvenNumber(number) {
-  return doubleEvenNumber(number).reduce((accumulate, currValue) => {
+  return doubleEvenNumberInArr(number).reduce((accumulate, currValue) => {
     return accumulate + currValue;
   });
 }
