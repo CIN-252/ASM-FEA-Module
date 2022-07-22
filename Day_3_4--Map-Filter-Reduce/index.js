@@ -69,14 +69,16 @@ function convertAnimalToString() {
   return animals.map(getAnimalInfo);
 }
 
-const convertByCallback = animals.map(
-  (animal) =>
-    `name: ${animal.name} - size: ${animal.size} - weight: ${animal.weight}kg`
-);
+//Viet tong quat:
+function convertAnimalToString_C2(arr) {
+  return arr.map((item) => {
+    return `name: ${item.name} - size: ${item.size}`;
+  });
+}
 
 console.log(animals);
 console.log("Result: ", convertAnimalToString());
-console.log("Result: ", convertByCallback);
+console.log("Result: ", convertAnimalToString_C2(animals));
 
 // BT4: Filter
 // Filter 4 Character:

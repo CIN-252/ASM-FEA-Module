@@ -108,6 +108,23 @@ con_tho_an_co(() => {
 */
 
 // Promise: pending-resolve-reject
+// function tra_tien() {
+//   return new Promise((resolve, reject) => {
+//     const TaiXiu = Math.random() > 0.5;
+//     console.log(TaiXiu);
+//     if (TaiXiu) resolve("Tra 50k");
+//     else reject("Ko tra");
+//   });
+// }
+
+// tra_tien()
+//   .then((nhanDuoc) => {
+//     console.log(nhanDuoc);
+//   })
+//   .catch((koNhanDuoc) => {
+//     console.log(koNhanDuoc);
+//   });
+
 function con_tho_an_co() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {

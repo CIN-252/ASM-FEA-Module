@@ -1,0 +1,15 @@
+// Assignment 3:
+// Làm chuỗi hành động của Thỏ với các hoạt động sau bằng 2 cách (callback và Promise)
+
+// const gioBatDauDi = 19
+// con_tho_an_co: ( cộng 1 tiếng - timeout: 1s) => con_tho_di_xem_phim: ( cộng 2 tiếng - timeout: 2s) => con_tho_di_dao: ( cộng 1 tiếng - timeout: 1s) => OUTPUT:
+// Con thỏ ăn cỏ lúc: 19h
+// Con thỏ ăn xong lúc: 20h
+// con thỏ đi xem phim xong lúc 22h
+// con thỏ đi dạo xong lúc: 23h
+
+// Tổng cộng thơi gian đi chơi là 4 tiếng
+// Thời gian code chạy 4s
+
+// example
+// con_tho_an_co(gioBatDauDi) => con_tho_di_xem_phim => con_tho_di_dao
