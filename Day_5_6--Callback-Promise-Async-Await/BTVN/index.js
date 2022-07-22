@@ -56,3 +56,47 @@
 // con_tho_an_co(() => con_tho_di_xem_phim(con_tho_di_dao));
 
 // Promise:
+// const gioBatDauDi = 19;
+function con_tho_an_co(gioBatDauDi) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(`con tho an co luc ${gioBatDauDi}h`);
+      resolve(gioBatDauDi + 1); // Tra ve gioAnXong
+    }, 1000);
+  });
+}
+
+function con_tho_di_xem_phim(gioBatDauXemPhim) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("con tho di xem phim");
+      resolve(gioBatDauXemPhim + 2); // Tra ve gioXemPhimXong
+    }, 2000);
+  });
+}
+
+function con_tho_di_dao(gioBatDauDiDao) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("con tho di dao");
+      resolve(gioBatDauDiDao + 1);
+    }, 1000);
+  });
+}
+
+con_tho_an_co(19)
+  .then((gioAnXong) => {
+    console.log(`con tho an xong luc ${gioAnXong}h`);
+    return con_tho_di_xem_phim(gioAnXong); // gioAnXong = gioBatDauXemPhim
+  })
+  .then((gioXemPhimXong) => {
+    console.log(`con tho xem phim xong luc ${gioXemPhimXong}h`);
+    return con_tho_di_dao(gioXemPhimXong); // gioXemPhimXong = gioBatDauDiDao
+  })
+  .then((gioDiDaoXong) => {
+    console.log(`con tho di dao xong luc ${gioDiDaoXong}h`);
+    console.log(`Tong thoi gian cua tho: ${gioDiDaoXong - 19}h`);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
