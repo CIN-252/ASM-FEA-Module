@@ -33,30 +33,39 @@
 
 // BTVN:
 // Callback:
-// function con_tho_an_co(hdSauKhiAnCo) {
+// const gioBatDauDi = 19;
+// const gioAnXong = gioBatDauDi + 1;
+// const gioXemPhimXong = gioAnXong + 2;
+// const gioDiDaoXong = gioXemPhimXong + 1;
+
+// function con_tho_an_co(gioBatDauDi, hdSauKhiAn) {
 //   setTimeout(() => {
-//     console.log("con tho an co");
-//     hdSauKhiAnCo();
+//     console.log(`con tho an co luc ${gioBatDauDi}h`);
+//     console.log(`con tho an xong luc ${gioAnXong}h`);
+//     hdSauKhiAn();
 //   }, 1000);
 // }
 
-// function con_tho_di_xem_phim(hdSauKhiXemPhim) {
+// function con_tho_di_xem_phim(gioXemPhimXong, hdSauKhiXem) {
 //   setTimeout(() => {
-//     console.log("con tho di xem phim");
-//     hdSauKhiXemPhim();
+//     console.log(`con tho di xem phim xong luc ${gioXemPhimXong}h`);
+//     hdSauKhiXem();
 //   }, 2000);
 // }
 
-// function con_tho_di_dao() {
+// function con_tho_di_dao(gioDiDaoXong) {
 //   setTimeout(() => {
-//     console.log("con tho di dao");
+//     console.log(`con tho di dao xong luc ${gioDiDaoXong}h`);
 //   }, 1000);
 // }
 
-// con_tho_an_co(() => con_tho_di_xem_phim(con_tho_di_dao));
+// con_tho_an_co(gioBatDauDi, () =>
+//   con_tho_di_xem_phim(gioXemPhimXong, () => con_tho_di_dao(gioDiDaoXong))
+// );
 
 // Promise:
-// const gioBatDauDi = 19;
+const gioBatDauDi = 19;
+
 function con_tho_an_co(gioBatDauDi) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -69,7 +78,6 @@ function con_tho_an_co(gioBatDauDi) {
 function con_tho_di_xem_phim(gioBatDauXemPhim) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log("con tho di xem phim");
       resolve(gioBatDauXemPhim + 2); // Tra ve gioXemPhimXong
     }, 2000);
   });
@@ -78,13 +86,12 @@ function con_tho_di_xem_phim(gioBatDauXemPhim) {
 function con_tho_di_dao(gioBatDauDiDao) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log("con tho di dao");
       resolve(gioBatDauDiDao + 1);
     }, 1000);
   });
 }
 
-con_tho_an_co(19)
+con_tho_an_co(gioBatDauDi)
   .then((gioAnXong) => {
     console.log(`con tho an xong luc ${gioAnXong}h`);
     return con_tho_di_xem_phim(gioAnXong); // gioAnXong = gioBatDauXemPhim
@@ -95,7 +102,7 @@ con_tho_an_co(19)
   })
   .then((gioDiDaoXong) => {
     console.log(`con tho di dao xong luc ${gioDiDaoXong}h`);
-    console.log(`Tong thoi gian cua tho: ${gioDiDaoXong - 19}h`);
+    console.log(`Tong thoi gian cua tho: ${gioDiDaoXong - gioBatDauDi}h`);
   })
   .catch((error) => {
     console.log(error);
