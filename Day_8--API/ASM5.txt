@@ -1,0 +1,8 @@
+// Gọi API (https://api.covid19api.com/summary) để lấy data covid và xuất ra thống kê như sau (Console.log) Làm bài 2 cách promise/ async await
+
+// Đang lấy dữ liệu, xin vui lòng chờ...
+// Đã lấy dữ liệu thành công, đang xuất thống kê:
+// Dữ liệu Covid hôm nay:
+// Nhiễm mới: 483124 - Số người chết mới: 2415 - Tổng số người chết: 6207172
+// Quốc Gia có số lượng tổng cộng người chết nhiều nhất là: VietNam (123434 người)
+// Quốc Gia có số lượng người mắc mới trong ngày nhiều nhất là: Brazil (123123 người)
